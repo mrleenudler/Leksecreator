@@ -1,4 +1,5 @@
 import sys
+import os, shutil
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox
 #For a PyQt application specifically, PyQt doesn't have a built-in mechanism for enforcing a single instance. However, you can achieve this behavior by other means, such as:
 #Using a Mutex or a Lock File: Create a lock file or a mutex when the application starts. If the file or mutex already exists, it indicates the application is running, and you can either focus the existing window or exit the new instance.
@@ -9,7 +10,7 @@ class MathExerciseGenerator(QWidget):
 	def __init__(self):
 		super().__init__() # Henter ting fra super-klassen (hva da?)
 		self.klassen = ""
-		self.klassenPWD = ""
+		self.klassenPWD = "C:/Users/andran0803/OneDrive - Osloskolen/_Skole/Matematikk/Resultater/Lekser 0NUSF 2023/IndividuellF"
 		self.initUI()
 	
 	def initUI(self):
@@ -18,17 +19,26 @@ class MathExerciseGenerator(QWidget):
 
 		layout = QVBoxLayout()
 
+		#Not useful yet
 		self.nameLabel = QLabel('Student Name:')
 		layout.addWidget(self.nameLabel)
 
 		self.nameInput = QLineEdit()
 		layout.addWidget(self.nameInput)
 
+		# Searching for existing files
+		self.searchStringLabel = QLabel('Search string:')
+		layout.addWidget(self.searchStringLabel)
+
+		self.searchStringInput = QLineEdit()
+		self.searchStringInput.textChanged.connect(self.searchForFiles)
+		layout.addWidget(self.searchStringInput)
+
 		# display PWD
 		self.PWDdisplay = QLabel(self.klassenPWD)
 		layout.addWidget(self.PWDdisplay)
-		self.levelLabel = QLabel('Choose class:')
-		layout.addWidget(self.levelLabel)
+		self.chooseKlasseLabel = QLabel('Choose class:')
+		layout.addWidget(self.chooseKlasseLabel)
 
 		self.selectKlasse = QComboBox()
 		self.selectKlasse.addItems(['0NUSF', '0NUSG', '0NUSI'])
@@ -47,7 +57,7 @@ class MathExerciseGenerator(QWidget):
 		# Placeholder for generating exercise logic
 		print(f"Generating exercise for {student_name}, Level {current_level}")
 
-	def getClassPWD(self, index):
+	def getClassPWD(self, index): # index trengs ikke skrives, for den brukes ikke 
 		self.klassen = self.selectKlasse.currentText()
 		if self.klassen == "0NUSF":
 			self.klassenPWD = "C:/Users/andran0803/OneDrive - Osloskolen/_Skole/Matematikk/Resultater/Lekser 0NUSF 2023/IndividuellF"
@@ -59,6 +69,15 @@ class MathExerciseGenerator(QWidget):
 			self.klassenPWD = "Annen klasse"
 		self.PWDdisplay.setText(self.klassenPWD)
 		
+	def searchForFiles(self, text):
+		os.system('cls') # Bare for wndows
+		print("Testing text", text)
+		files = None
+		files = [f for f in os.listdir(self.klassenPWD) if os.path.isfile(os.path.join(self.klassenPWD, f))]
+		for file in files:
+			if (file.lower().find(text) != -1):
+				print(file)
+
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
