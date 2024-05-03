@@ -1,24 +1,44 @@
-LEKSECREATOR
+Enheter konvertering:
+Trenger svar
+Trenger å generere tilfeldig enhet
+-> Kan bruke koble sammen prefiks og enhet for mindre kode. 
+Trenger å flytte komma til oppgaven
+
+SVAR * 10^X * ENHETSDIFFERANSE
+ENHET
+KORRESPONDERENDE_ENHET
+Algoritme for tilfeldig valg av enhet
+
+mm - cm - dm - m - km
+tilfeldigmellom(1;5)
+20% + 25% + 33% + %50
+
+LEKSECREATOR [Geometrioppavene kan få fasit]
 
 
 
 Mål 0: All kode skal være testbar til enhver tid.
 
 Mål 1: Finne og kopiere/oppdatere tilpasset lekse
--> Velge klasse setter PWD (Skal mappene samles i én felles? -> Lager bare for leksene så langt.)
+X Velge klasse setter PWD 
 	-> Implementer visuelt mappevalg(windows explorer).
-	-> Mappene må lagres til senere i en ekstern fil.
--> Søkefelt viser filer funnet
--> Input ny string for neste lekse
+	-> Mappene må lagres til senere i en ekstern fil(knyttet til de definerte klassene).
+-> Søkefelt viser filer funnet # lagrer søket i self.foundFiles -> Jobber med display
+
+-> Sorter ut elevnavn (?)
+-> Input ny string for neste lekse 
+	-> self.renameFiles
 -> Copy/rename
 -> Replace header in Excel
 ? class variable vs. instance variable?
 
+-> Bredden av bokser og layouter bestemmes nå av path, som er veldig lang.
 
-
-
+# Paste i VSC terminal for git access
+$env:PATH += ";C:\Users\andran0803\OneDrive - Osloskolen\_Python\GIT\GitPortable\App\Git\bin"
 
 __________________________________________________________
 IDEER TIL SENERE:
 Progresjonen(og eventuelt læringsutbytte) til elevene beregnes til en(eller flere) konstant(er) som vises i kontekst.
+
 
