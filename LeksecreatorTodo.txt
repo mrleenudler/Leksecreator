@@ -1,0 +1,24 @@
+LEKSECREATOR
+
+
+
+Mål 0: All kode skal være testbar til enhver tid.
+
+Mål 1: Finne og kopiere/oppdatere tilpasset lekse
+-> Velge klasse setter PWD (Skal mappene samles i én felles? -> Lager bare for leksene så langt.)
+	-> Implementer visuelt mappevalg(windows explorer).
+	-> Mappene må lagres til senere i en ekstern fil.
+-> Søkefelt viser filer funnet
+-> Input ny string for neste lekse
+-> Copy/rename
+-> Replace header in Excel
+? class variable vs. instance variable?
+
+
+
+
+
+__________________________________________________________
+IDEER TIL SENERE:
+Progresjonen(og eventuelt læringsutbytte) til elevene beregnes til en(eller flere) konstant(er) som vises i kontekst.
+

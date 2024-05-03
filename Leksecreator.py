@@ -15,7 +15,7 @@ class MathExerciseGenerator(QWidget):
 	
 	def initUI(self):
 		self.setWindowTitle('Math Exercise Generator')
-		self.setGeometry(100, 100, 600, 500)
+		self.setGeometry(500, 100, 600, 500)
 
 		layout = QVBoxLayout()
 
